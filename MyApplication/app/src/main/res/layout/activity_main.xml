@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <!--TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Да здравствует Интернационал!!!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20sp"
+
+        android:textColor="#000000"
+        />
+    <com.numetriclabz.numandroidcharts.PieChart
+    android:layout_width="match_parent"
+    android:layout_height="0dip"
+    android:layout_weight="1"
+    android:layout_margin="10dp"
+    android:id="@+id/piegraph"
+    app:pieInnerCircleRatio="128" /-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <!--TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:text="слева сверху"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:text="справа сверху"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="слева снизу"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:text="слева снизу"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="bottom|right"
+            /-->
+        <!--TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="а я по центру"
+            android:layout_gravity="center_horizontal|center_vertical"
+            /-->
+        <!--com.numetriclabz.numandroidcharts.PieChart
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:id="@+id/piegraph"
+            android:layout_gravity="center_horizontal|center_vertical"
+            app:pieInnerCircleRatio="128" /-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorAccent"
+             android:gravity="center_vertical"
+
+            android:text="Первый элемент"
+            />
+
+        <TextView
+    android:layout_width="match_parent"
+    android:layout_height="20dp"
+    android:background="@color/colorAccent"
+    android:layout_marginTop="25dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:text="Первый элемент"
+    />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+             android:gravity="right"
+             android:layout_marginTop="30dp"
+
+            android:layout_marginRight="10dp"
+            android:text="Второй элемент"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+
+            android:layout_marginRight="10dp"
+            android:text="Третий элемент"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Последний элементrhtrhthrhthrthfghdhddfhdfhfdhdhdhhfhdhdhdhhdhfhddhdfhdfhhdfhdh"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/globe"
+            />
+</LinearLayout>
