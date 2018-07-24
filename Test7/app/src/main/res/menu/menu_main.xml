@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.smakarov.test7.MainActivity">
+
+    <item
+        android:id="@+id/action_green"
+        android:orderInCategory="102"
+        android:title="@string/action_green"
+
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_blue"
+        android:orderInCategory="103"
+        android:title="@string/action_blue"
+
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_red"
+        android:orderInCategory="104"
+
+        android:title="@string/action_red"
+        app:showAsAction="never" />
+
+</menu>
