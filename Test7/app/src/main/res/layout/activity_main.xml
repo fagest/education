@@ -17,7 +17,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" >
-        <ImageView
+        <!--ImageView
             android:id="@+id/img_black"
             android:layout_gravity="end"
             android:layout_width="20dp"
@@ -32,7 +32,7 @@
                 android:layout_height="20dp"
                 android:layout_margin="5dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/snape_oval_"/>
+                android:src="@drawable/snape_oval_"/-->
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>

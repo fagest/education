@@ -11,6 +11,8 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.StringRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 
@@ -24,41 +26,35 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var textFrame:TextView
-    private lateinit var imgBlack: ImageView
-    private lateinit var imgWhite:ImageView
+   // private lateinit var imgBlack: ImageView
+   // private lateinit var imgWhite:ImageView
     private lateinit var frame:ConstraintLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-        textFrame= findViewById (R.id.text_frame)
+        textFrame = findViewById (R.id.text_frame)
         frame = findViewById (R.id.frame)
-        imgBlack= findViewById (R.id.img_black)
-        imgWhite= findViewById (R.id.img_white)
+        /*
+         imgBlack= findViewById (R.id.img_black)
+       imgWhite= findViewById (R.id.img_white)
         imgBlack.setOnClickListener(
                 object : View.OnClickListener {
                     override fun onClick(v: View?) {
-                        textFrame.text = getString(R.string.action_black)
-                        textFrame.setTextColor(Color.BLACK)
-                        frame.setBackgroundColor (Color.WHITE)
-                    }
+                        changeColor(MenuColor.BLACK)
+                                   }
                 }
         )
         imgWhite.setOnClickListener(
                 object : View.OnClickListener {
                     override fun onClick(v: View?) {
-                        textFrame.text = getString(R.string.action_white)
-                        textFrame.setTextColor(Color.WHITE)
-                        frame.setBackgroundColor (Color.GRAY)
-                    }
+                        changeColor(MenuColor.WHITE)
+                       }
                 }
         )
-
-
+        */
     }
-
-
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -69,24 +65,44 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         return when (item.itemId) {
+            R.id.action_black -> {
+                changeColor(MenuColor.BLACK)
+                true}
+            R.id.action_white -> {
+                changeColor(MenuColor.WHITE)
+                true}
             R.id.action_red -> {
-                frame.setBackgroundColor (ContextCompat.getColor(this,R.color.color_red))
-                textFrame.text= this.getString(R.string.action_red)
-                textFrame.setTextColor(Color.RED)
+                changeColor(MenuColor.RED)
                 true}
 
             R.id.action_green -> {
-                frame.setBackgroundColor(ContextCompat.getColor(this, R.color.color_green))
-                textFrame.text= this.getString(R.string.action_green)
-                textFrame.setTextColor(Color.GREEN)
-                true}
+                changeColor(MenuColor.GREEN)
+                 true}
 
             R.id.action_blue -> {
-                frame.setBackgroundColor(ContextCompat.getColor(this,R.color.color_blue))
-                textFrame.text= this.getString(R.string.action_blue)
-                textFrame.setTextColor(Color.BLUE)
+                changeColor(MenuColor.BLUE)
                 true}
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    enum class MenuColor(@StringRes val colorNameResId :Int,
+                         @ColorRes val backgroundColorsId :Int,
+                         @ColorRes val textColorResId :Int
+
+    ){
+        BLACK(R.string.action_black,R.color.color_black_background,R.color.color_black_text),
+        WHITE (R.string.action_white,R.color.color_white_background,R.color.color_white_text),
+        RED (R.string.action_red,R.color.color_red_background,R.color.color_red_text),
+        GREEN (R.string.action_green,R.color.color_green_background,R.color.color_green_text),
+        BLUE (R.string.action_blue,R.color.color_blue_background,R.color.color_blue_text)
+    }
+
+    fun changeColor(menuColor:MenuColor){
+        frame.setBackgroundColor(ContextCompat.getColor(this,menuColor.backgroundColorsId))
+        textFrame.text= this.getString(menuColor.colorNameResId)
+        textFrame.setTextColor(ContextCompat.getColor(this,menuColor.textColorResId))
+
+    }
+
 }
