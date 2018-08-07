@@ -3,6 +3,12 @@ package com.example.student_39.test17
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
+/**
+ * тестовое задание 17
+ * created 03.08.2018 by Sergey V.Makarov
+ * email:fagest@yandex.ru
+ *
+ */
 class MainActivity : AppCompatActivity(),ListenerFragment.OpenNewFragmentListener {
     override fun open() {
 //        supportFragmentManager
