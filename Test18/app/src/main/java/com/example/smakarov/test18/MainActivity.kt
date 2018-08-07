@@ -1,5 +1,6 @@
 package com.example.smakarov.test18
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -9,7 +10,7 @@ import android.os.Bundle
  * email:fagest@yandex.ru
  *
  */
-class MainActivity : AppCompatActivity(),ListenerFragment.OpenNewFragmentListener {
+class MainActivity : AppCompatActivity(), ListenerFragment.OpenNewFragmentListener {
     override fun open() {
 //        supportFragmentManager
 //                .beginTransaction()
@@ -21,11 +22,16 @@ class MainActivity : AppCompatActivity(),ListenerFragment.OpenNewFragmentListene
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val orientation: Int = resources.configuration.orientation
+        if (orientation == Configuration.ORIENTATION_PORTRAIT)
+            setContentView(R.layout.activity_main)
+        else
+            setContentView(R.layout.activity_main_)
+
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.top_fragment_container,ListenerFragment())
+                    .replace(R.id.top_fragment_container, ListenerFragment())
                     .commit()
         }
     }
