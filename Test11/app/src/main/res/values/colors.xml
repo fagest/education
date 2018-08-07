@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="chipIconTint">#1bd8cf</color>
+    <color name="paper">#fafafa</color>
+    <color name="base10">#eaeaea</color>
+    <color name="base30">#c1c1c1</color>
+</resources>

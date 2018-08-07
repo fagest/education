@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Test12</string>
+    <string name="email_text">email_text</string>
+    <string name="header_first">Экран 1</string>
+    <string name="header_second">Экран 2</string>
+    <string name="header_third">"Экран 3</string>
+    <string name="text_header_from_1">Тест с первого экрана</string>
+    <string name="text_header_from_3">Текст с третьего экрана</string>
+    <string name="button_text">Переход</string>
+
+</resources>
