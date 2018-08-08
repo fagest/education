@@ -55,8 +55,7 @@ class ListenerFragment : Fragment() {
         adapter.setOnRecyclerClicked(object : RecyclerAdapter.OnRecyclerClicked {
             override fun onClick(forecast: MainActivity.Forecast) {
                // Toast.makeText(this@MainActivity, forecast.city, Toast.LENGTH_LONG).show()
-
-                //    Toast.makeText(context, forecast.city, Toast.LENGTH_SHORT).show()
+              //    Toast.makeText(context, forecast.city, Toast.LENGTH_SHORT).show()
                     fragmentManager?.beginTransaction()
                             ?.replace(R.id.bottom_fragment_container, ViewFragment.newInstance(forecast.city))
                             ?.addToBackStack(null)

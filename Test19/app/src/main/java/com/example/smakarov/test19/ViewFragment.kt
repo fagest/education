@@ -23,6 +23,7 @@ class ViewFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+                //без этого интернет не заработал
         if (android.os.Build.VERSION.SDK_INT > 9) {
             val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
             StrictMode.setThreadPolicy(policy)
@@ -31,54 +32,32 @@ class ViewFragment : Fragment() {
         imageCity = view.findViewById(R.id.image_city)
         val arg: String = arguments?.get("ARGS_KEY") as String
         imageCity.setImageResource(R.drawable.default_)
-        var url: URL
+
         var uri: String
 
         headCity.text = arg
         if (arg.equals("Москва")) {
             // imageCity.setImageResource(R.drawable.moscow)
-            //   setIcon("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Coat_of_arms_of_Moscow_Oblast_%28large%29.svg/220px-Coat_of_arms_of_Moscow_Oblast_%28large%29.svg.png")
             uri = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Coat_of_arms_of_Moscow_Oblast_%28large%29.svg/220px-Coat_of_arms_of_Moscow_Oblast_%28large%29.svg.png"
-            url = URL(uri)
-            try {
-                val mIcon_val = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                imageCity.setImageBitmap(mIcon_val)
-            } catch (e: Exception) {
-                Log.e(TAG, e.toString())
-            }
+            setIcon(uri)
         }
         if (arg.equals("Челябинск")) {
             uri = "https://upload.wikimedia.org/wikipedia/commons/0/04/Coat_of_Arms_of_Yuzhnouralsk_%28Chelyabinsk_oblast%29.png"
-            //   setIcon("https://upload.wikimedia.org/wikipedia/commons/0/04/Coat_of_Arms_of_Yuzhnouralsk_%28Chelyabinsk_oblast%29.png")
-            url = URL(uri)
-            try {
-                val mIcon_val = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                imageCity.setImageBitmap(mIcon_val)
-            } catch (e: Exception) {
-                Log.e(TAG, e.toString())
-            }
+            setIcon(uri)
         }
-        if(arg.equals("Питер")) {
-
+        if (arg.equals("Питер")) {
             uri = "http://abali.ru/wp-content/uploads/2010/12/gerb_sankt-peterburga.png"
-            url = URL(uri)
-            try {
-                val mIcon_val = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                imageCity.setImageBitmap(mIcon_val)
-            } catch (e: Exception) {
-                Log.e(TAG, e.toString())
-            }
+            this.setIcon(uri)
         }
     }
 
 
-    fun seIcon(uri: String): Unit {
-
+    fun setIcon(uri: String): Unit {
         val url: URL = URL(uri)
         try {
             val mIcon_val = BitmapFactory.decodeStream(url.openConnection().getInputStream());
             imageCity.setImageBitmap(mIcon_val)
-        } catch (e: Exception) {
+        } catch (e: Exception ) {
             Log.e(TAG, e.toString())
         }
     }
